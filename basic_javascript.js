@@ -18,9 +18,4 @@ let kotak = new persegi(5)
 console.log("Luas : " + kotak.luas())
 console.log("Keliling : " + kotak.keliling())
 
-// class kubus extends persegi {
-//     // kll 6 x sisi
-//     // l 6 x sisi^2
-//     // vol sisi^3
-// }
-
+console.log("add class kubus")

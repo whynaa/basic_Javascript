@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <h1>BMI CALCULATOR</h1>
+      <p>Height in centimeters:</p>
+      <input class="height-input-field" type="text" />
+      <p>Weight in kilograms:</p>
+      <input class="weight-input-field" type="text" /><br /><br />
+      <button class="calculate" onclick="calculateBMI()">Calculate</button>
+
+      <h3 class="result"></h3>
+      <p class="result-statement"></p>
+    </div>
+
+    <script>
+      var heightInput = document.querySelector(".height-input-field");
+      var weightInput = document.querySelector(".weight-input-field");
+      var calculateButton = document.querySelector(".calculate");
+      var result = document.querySelector(".result");
+      var statement = document.querySelector(".result-statement");
+      var BMI, height, weight;
+
+      function calculateBMI() {
+        height = heightInput.value * 100;
+        weight = weightInput.value;
+        BMI = weight / height ** 2;
+        result.innerText = BMI;
+
+        if (BMI < 18.5) {
+          statement.innerText = "Kekurangan Berat Badan";
+        } else if (BMI > 18.5 && BMI < 24.9) {
+          statement.innerText =
+            "Normal (Ideal)";
+        } else if (BMI > 25 && BMI < 29.9) {
+          statement.innerText = "Kelebihan Berat Badan";
+        } else if (BMI > 30) {
+          statement.innerText = "Kegemukan (Obesitas)";
+        }
+      }
+      
+    </script>
+  </body>
+</html>
